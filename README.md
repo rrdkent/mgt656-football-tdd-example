@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The Yale-Harvard football game is fast approaching. Here, we're going to write some code that could power an online ticket sales application. We'll be working on just a small piece of the code: the part that fulfills ticket orders and keeps track of how many seats of each kind are available in the stadium. We'll be making some changes to the existing system in order to support a new functionality: the ability for SOM to reserve tickets for its students. We'll be changing the code and adding more tests to cover the new functionality (while, of course, ensuring our old tests do not break).
+The Yale-Harvard football game is fast approaching. Here, we're going to write some code that could power an online ticket sales application. We'll be working on just a small piece of the code: the part that fulfills ticket orders and keeps track of how many seats of each kind are available in the stadium. 
 
 ## What you should learn
 

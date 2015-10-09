@@ -1,30 +1,56 @@
 
 
+
 function createTicketBooth(){
   return {
-    seatsAvailable: {a: 250, b: 900},
-    reservedSeats: {
-      som: {a: 0, b: 100}
+    a: {
+      available: 250,
+      filled: 0,
+      reserved: {
+        som: 0
+      }
     },
-    seatsFilled: {a: 0, b: 0},
-    
+    b: {
+      available: 750,
+      filled: 0,
+      reserved: {
+        som: 100
+      }
+    }
   }
 }
 
-function placeTicketOrder(numberOfTickets, section, studentAffiliation, ticketBooth) {
-  var aFulfilled = 0;
-  var bFulfilled = 0;
-  var fulfilled = true;
+var seatPrices = {
+  a: 50,
+  b: 30
+};
 
-  if (ticketOrder.tickets.a <= ticketBooth.seatsAvailable.a) {
-    aFulfilled = ticketOrder.tickets.a;
-    ticketBooth.seatsAvailable.a -= aFulfilled;
-  }else{
-    fulfilled = false;
+function placeTicketOrder(numberOfTickets, seatSection, studentAffiliation, ticketBooth) {
+  var fulfilled = false;
+  var totalPrice = 0;
+
+  if (seatSection !== 'a' && seatSection !== 'b') {
+    throw new Error('invalid seat section');
+  }
+
+  // Are enough seats available?
+  if (numberOfTickets < ticketBooth[seatSection].available) {
+
+    // If so, decrement the number of tickets available, we just sold 'em!
+    ticketBooth[seatSection].available -= numberOfTickets;
+    ticketBooth[seatSection].filled += numberOfTickets;
+    totalPrice = numberOfTickets * seatPrices[seatSection];
+
+    // Apply a 50% discount for Yale College students
+    if (studentAffiliation === 'yc') {
+      totalPrice *= 0.5;
+    }
+    fulfilled = true;
+
   }
 
   return {
-    seats: {a: 0, b: 0}
-    fulfilled: true
+    fulfilled: fulfilled,
+    totalPrice: totalPrice
   }
 }

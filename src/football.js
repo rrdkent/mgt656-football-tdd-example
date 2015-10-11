@@ -17,7 +17,7 @@ function createTicketBooth(){
         som: 100
       }
     }
-  }
+  };
 }
 
 var seatPrices = {
@@ -52,5 +52,5 @@ function placeTicketOrder(numberOfTickets, seatSection, studentAffiliation, tick
   return {
     fulfilled: fulfilled,
     totalPrice: totalPrice
-  }
+  };
 }

@@ -52,7 +52,7 @@ describe("Ticket orders", function() {
   it("should throw an error if the seat section is not a or b", function() {
     var callPlaceOrder = function(){
       return placeTicketOrder(1, 'c', 'yc', ticketBooth);
-    }
+    };
     expect(callPlaceOrder).toThrowError('invalid seat section');
   });
 
@@ -74,14 +74,14 @@ describe("Ticket orders", function() {
   it("should be $50 for A seats and $40 for B seats", function() {
     var orderResults = placeTicketOrder(1, 'a', null, ticketBooth);
     expect(orderResults.totalPrice).toBe(50);
-    var orderResults = placeTicketOrder(1, 'b', null, ticketBooth);
+    orderResults = placeTicketOrder(1, 'b', null, ticketBooth);
     expect(orderResults.totalPrice).toBe(30);
   });
 
   it("should be half price for Yale College students", function() {
     var orderResults = placeTicketOrder(1, 'a', 'yc', ticketBooth);
     expect(orderResults.totalPrice).toBe(50/2);
-    var orderResults = placeTicketOrder(1, 'b', 'yc', ticketBooth);
+    orderResults = placeTicketOrder(1, 'b', 'yc', ticketBooth);
     expect(orderResults.totalPrice).toBe(30/2);
   });
 
@@ -106,7 +106,7 @@ describe("Ticket orders (depending on )", function() {
   it("should decrement seats available", function() {
     var orderResults = placeTicketOrder(1, 'a', 'yc', ticketBooth);
     expect(orderResults.totalPrice).toBe(50/2);
-    var orderResults = placeTicketOrder(1, 'b', 'yc', ticketBooth);
+    orderResults = placeTicketOrder(1, 'b', 'yc', ticketBooth);
     expect(orderResults.totalPrice).toBe(30/2);
   });
 

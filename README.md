@@ -65,7 +65,7 @@ As always, grab us if there's any issues!
 
 ### Setting up cloud9
 
-To get started on cloud9, log into your account at [cloud9](https://c9.io).
+To get started on cloud9, log into your account at <a href="https://c9.io" target="_blank">cloud9</a>.
 
 - Create a new workspace.  In the field `Clone from Git or Mecurial URL`, enter the value:
   `https://github.com/yale-mgt-656/mgt656-football-tdd-example.git`.

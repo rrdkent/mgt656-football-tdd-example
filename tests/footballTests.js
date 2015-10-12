@@ -89,13 +89,23 @@ describe("Ticket orders (depending on constraints)", function() {
   it("should be half price for Yale College students", function() {
     // TODO enter your test code here
   });
+});
 
-// STRETCH Goals
-  it("should have a block of 100 half-price reserved for SOM students", function() {
+describe("Ticket orders for reservations (STRETCH)", function () {
+
+  var ticketBooth;
+  var anyNumber = jasmine.any(Number);
+
+  beforeEach(function() {
+    ticketBooth = createTicketBooth();
+  });
+
+  // STRETCH Goals
+  it("should have a block of 100 half-price tickets reserved for SOM students only in B", function() {
     // TODO (strech) enter your test code here
   });
 
-  it("should properly handle purchases fullfilled partially from reserved seats", function() {
+  it("should properly price purchases fullfilled partially from reserved seats", function() {
     // TODO (stretch) enter your test code here
   });
 

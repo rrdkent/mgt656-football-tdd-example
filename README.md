@@ -37,13 +37,21 @@ The ticket sales for the game should work as follows:
 * The ticket booth has 1,000 seats available at first, 500 of which are in section A and 500 of which are in section B.
 * Tickets in section A have a much better view and cost $50. Tickets in section B are $30.
 * Yale College students get a 50% discount on all ticket purchases.
-* SOM has reserved a block of 100 B seats for its students that are available at a 50% discount. But, once they're gone, they're gone. These tickets cannot be purchased by anybody except SOM students.
-* The ticket booth will not fulfull ticket orders if they cannot be fulfulled in full.
+* The ticket booth will not fulfilled ticket orders if they cannot be fulfilled in full.
 * Students can only order one kind of ticket at a time.
+* (**stretch**) SOM has reserved a block of 100 B seats for its students that are available at a 50% discount. But, once they're gone, they're gone. These tickets cannot be purchased by anybody except SOM students.
 
 ## Your task
 
-You're going to be altering `football.js` to reflect the requirements articulated above. There is a function in that code
+We'll be working with some code for this assignment.  You're welcome
+to use a new node.js project on cloud9, or work locally on your machine if you prefer.
+
+You're going to be altering `football.js` to reflect the requirements articulated above. There is a function in that code called `placeTicketOrder` which is called on each order, and updates
+the ticket booth's availability.
+
+There are some tests to get you started.  You will want to add more in the file `./tests/footballTests.js` to ensure you satisfy the constraints.
+
+When you think you're ready, a TA will help you check your solution.
 
 ## Caveats
 

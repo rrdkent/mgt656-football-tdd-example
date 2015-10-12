@@ -4,7 +4,7 @@
 function createTicketBooth(){
   return {
     a: {
-      available: 700,
+      available: 500,
       filled: 0,
       reserved: {
         som: 0
@@ -21,7 +21,7 @@ function createTicketBooth(){
 }
 
 var seatPrices = {
-  a: 100,
+  a: 50,
   b: 30
 };
 

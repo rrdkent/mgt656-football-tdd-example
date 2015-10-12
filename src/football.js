@@ -4,19 +4,19 @@
 function createTicketBooth(){
   return {
     a: {
-      available: 250,
+      available: 500,
       filled: 0,
       reserved: {
         som: 0
       }
     },
     b: {
-      available: 750,
+      available: 500,
       filled: 0,
       reserved: {
         som: 100
-      }
-    }
+      },
+    },
   };
 }
 

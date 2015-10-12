@@ -4,24 +4,24 @@
 function createTicketBooth(){
   return {
     a: {
-      available: 250,
+      available: 700,
       filled: 0,
       reserved: {
         som: 0
       }
     },
     b: {
-      available: 750,
+      available: 500,
       filled: 0,
       reserved: {
         som: 100
-      }
-    }
+      },
+    },
   };
 }
 
 var seatPrices = {
-  a: 50,
+  a: 100,
   b: 30
 };
 
@@ -43,7 +43,7 @@ function placeTicketOrder(numberOfTickets, seatSection, studentAffiliation, tick
 
     // Apply a 50% discount for Yale College students
     if (studentAffiliation === 'yc') {
-      totalPrice *= 0.5;
+      totalPrice *= 0.8;
     }
     fulfilled = true;
 

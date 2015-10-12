@@ -22,8 +22,8 @@ describe("Ticket booth", function() {
     expect(ticketBooth.b.filled).toEqual(anyNumber);
   });
 
-  it("should have 250 seats in A, 750 in B", function() {
-    var limits = {a: 250, b: 750};
+  it("should have 500 seats in A, 500 in B", function() {
+    var limits = {a: 500, b: 500};
     for (var section in limits) {
       var totalSeatsInSection =
         ticketBooth[section].filled + ticketBooth[section].available;
@@ -34,7 +34,7 @@ describe("Ticket booth", function() {
   it("should have fewer seats available after selling one", function() {
     var orderResults = placeTicketOrder(1, 'a', 'yc', ticketBooth);
     expect(ticketBooth.a.filled).toEqual(1);
-    expect(ticketBooth.a.available).toEqual(249);
+    expect(ticketBooth.a.available).toEqual(499);
   });
 
 
@@ -70,25 +70,10 @@ describe("Ticket orders", function() {
     var orderResults = placeTicketOrder(100000, 'a', 'yc', ticketBooth);
     expect(orderResults.totalPrice).toBe(0);
   });
-
-  it("should be $50 for A seats and $40 for B seats", function() {
-    var orderResults = placeTicketOrder(1, 'a', null, ticketBooth);
-    expect(orderResults.totalPrice).toBe(50);
-    orderResults = placeTicketOrder(1, 'b', null, ticketBooth);
-    expect(orderResults.totalPrice).toBe(30);
-  });
-
-  it("should be half price for Yale College students", function() {
-    var orderResults = placeTicketOrder(1, 'a', 'yc', ticketBooth);
-    expect(orderResults.totalPrice).toBe(50/2);
-    orderResults = placeTicketOrder(1, 'b', 'yc', ticketBooth);
-    expect(orderResults.totalPrice).toBe(30/2);
-  });
-
 });
 
 
-describe("Ticket orders (depending on )", function() {
+describe("Ticket orders (depending on constraints)", function() {
 
   var ticketBooth;
   var anyNumber = jasmine.any(Number);
@@ -97,9 +82,8 @@ describe("Ticket orders (depending on )", function() {
     ticketBooth = createTicketBooth();
   });
 
-
   it("should not let non-SOM students purchase reserved seats", function() {
-    var orderResults = placeTicketOrder(700, 'b', null, ticketBooth);
+    var orderResults = placeTicketOrder(500, 'b', null, ticketBooth);
     expect(orderResults.fulfilled).toBe(false);
   });
 

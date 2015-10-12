@@ -51,6 +51,8 @@ the ticket booth's availability.
 
 There are some tests to get you started.  You will want to add more in the file `./tests/footballTests.js` to ensure you satisfy the constraints.
 
+The code here passes all the contained tests, and (we're telling you) passes all the constraints!  But, there are not tests for some constraints, and the code is quite messy.  Please improve the quality of the code, and in doing so, add tests to ensure you do not break it.
+
 When you think you're ready, a TA will help you check your solution.
 
 ## Caveats

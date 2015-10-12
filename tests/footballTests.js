@@ -94,4 +94,31 @@ describe("Ticket orders (depending on constraints)", function() {
     expect(orderResults.totalPrice).toBe(30/2);
   });
 
+  it("should be $50 for A seats and $30 for B seats", function() {
+    var orderResults = placeTicketOrder(1, 'a', null, ticketBooth);
+    expect(orderResults.totalPrice).toBe(50);
+    orderResults = placeTicketOrder(1, 'b', null, ticketBooth);
+    expect(orderResults.totalPrice).toBe(30);
+  });
+
+  it("should be half price for Yale College students", function() {
+    var orderResults = placeTicketOrder(1, 'a', 'yc', ticketBooth);
+    expect(orderResults.totalPrice).toBe(50/2);
+    orderResults = placeTicketOrder(1, 'b', 'yc', ticketBooth);
+    expect(orderResults.totalPrice).toBe(30/2);
+  });
+
+  it("should have a block of 100 half-price reserved for SOM students", function() {
+    var orderResults = placeTicketOrder(100, 'b', 'som', ticketBooth);
+    expect(orderResults.totalPrice).toBe(30/2 * 100);
+    orderResults = placeTicketOrder(1, 'b', 'som', ticketBooth);
+    expect(orderResults.totalPrice).toBe(30);
+  });
+
+  it("should properly handle partially-reservation purchases", function() {
+    var orderResults = placeTicketOrder(101, 'b', 'som', ticketBooth);
+    expect(orderResults.totalPrice).toBe(30/2 * 100 + 30);
+    orderResults = placeTicketOrder(1, 'b', 'som', ticketBooth);
+    expect(orderResults.totalPrice).toBe(30);
+  });
 });

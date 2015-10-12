@@ -41,12 +41,7 @@ function placeTicketOrder(numberOfTickets, seatSection, studentAffiliation, tick
     ticketBooth[seatSection].filled += numberOfTickets;
     totalPrice = numberOfTickets * seatPrices[seatSection];
 
-    // Apply a 50% discount for Yale College students
-    if (studentAffiliation === 'yc') {
-      totalPrice *= 0.8;
-    }
     fulfilled = true;
-
   }
 
   return {

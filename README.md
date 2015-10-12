@@ -59,7 +59,7 @@ above that are written in *italics* do not have test cases written yet.
 The instructions below lay out how to get through this activity.  In case you have any issues,
 here's some more reference and examples on the testing we will use.
 
-(Jasmine Reference)[http://jasmine.github.io/2.3/introduction.html]
+[Jasmine Reference](http://jasmine.github.io/2.3/introduction.html)
 
 As always, grab us if there's any issues!
 

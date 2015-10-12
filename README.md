@@ -2,7 +2,9 @@
 
 ## Introduction
 
-The Yale-Harvard football game is fast approaching. Here, we're going to write some code that could power an online ticket sales application. We'll be working on just a small piece of the code: the part that fulfills ticket orders and keeps track of how many seats of each kind are available in the stadium. 
+The Yale-Harvard football game is fast approaching. Here, we're going to write some code that could power an online ticket sales application. We'll be working on just a small piece of the code: the part that fulfills ticket orders and keeps track of how many seats of each kind are available in the stadium.
+
+![Yale Bowl](https://raw.githubusercontent.com/yale-mgt-656/mgt656-football-tdd-example/images/yale-bowl.jpg)
 
 ## What you should learn
 
